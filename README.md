@@ -23,6 +23,7 @@ Once I was ready with a first draft of my code in Rust, I compiled it into a sta
 ### Overview of Optimizations
 
 First, I started with the unoptimized design and provided a numerical objective to my program. Although it is not complete and will likely need further adjustment from heuristics,
+
 $$
 Risk = R_{opp} + f(dist_0, \phi_0) + \sum_{i=1}^{n} [ f(dist_i, \phi_i) \cdot (1 + K_{depth} \cdot M_{reflect} \cdot N_{opp})^{i} ]
 $$
