@@ -1,0 +1,53 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Define CPU core count
+NUM_CPUS=4
+NUM_ITERS=100
+
+# Configure sweeps: adjust as needed
+# e.g., thread counts from 1 to 50
+THREADS=(9 10 11 24)
+# seeds from 1 to 10
+SEEDS=(2 3 4 8)
+
+# Create output reports directory
+mkdir -p rpts
+
+echo "=========================================================="
+echo "Starting supercheck sweep on ${NUM_CPUS}-core O3 CPU"
+echo "Threads: ${THREADS[*]}"
+echo "Seeds:   ${SEEDS[*]}"
+echo "=========================================================="
+
+for t in "${THREADS[@]}"; do
+    for s in "${SEEDS[@]}"; do
+        OUTPUT_FILE="rpts/thread${t}_seed${s}.txt"
+        
+        # Skip if already completed (allows resuming interrupted runs)
+        if [[ -f "$OUTPUT_FILE" && -s "$OUTPUT_FILE" ]]; then
+            echo "[SKIP] ${OUTPUT_FILE} already exists."
+            continue
+        fi
+
+        echo ">>> Running: ${NUM_CPUS} CPUs | ${t} Threads | Seed ${s} ..."
+        
+        # Run gem5
+        build/ECE565-X86/gem5.opt rayon_fs.py \
+            --num_cpus "${NUM_CPUS}" \
+            --iters "${NUM_ITERS}" \
+            --threads "${t}" \
+            --seed "${s}"
+        
+        # Verify and copy stats
+        if [[ -f "m5out/stats.txt" ]]; then
+            cp m5out/stats.txt "${OUTPUT_FILE}"
+            echo "    -> Saved to ${OUTPUT_FILE}"
+        else
+            echo "    [ERROR] m5out/stats.txt not found!" >&2
+        fi
+    done
+done
+
+echo "Sweep complete! All reports stored in rpts/"
+
