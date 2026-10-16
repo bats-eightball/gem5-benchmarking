@@ -2,7 +2,7 @@
 
 Honestly, not sure if I'm allowed to put my gem5 related stuff here because I'm in the course. Additionally, if you want to build my project, you can refer to the other repositories in this organization. This repo is just meant to be a place to store my benchmarking results and scripts.
 
-Refer to my actual Rust code here: <link>
+Refer to my actual Rust code here: [https://github.com/bats-eightball/alfred](github.com/bats-eightball/alfred)
 
 Below is a summary of my work. I'm still new to gem5 so it was a very "put pre-made blocks together and script" kind of project. To be fair, anything more may be overkill for the use case. I'm happy that I actually get to work on cool things as part of the course though. 
 
