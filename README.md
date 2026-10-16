@@ -48,9 +48,9 @@ My next observation was that this method of backward traversal allowed for a str
 
 <img src="imgs/pathfinding.png" style="display: block; margin: 0 auto; width: 600px;">
 
-<img src="imgs/ghostball.png" style="display: block; margin: 0 auto; width: 600px;">
+<img src="imgs/ghostball.png" style="display: block; margin: 0 auto; width: 250px;">
 
-<img src="imgs/reflection.png" style="display: block; margin: 0 auto; width: 600px;">
+<img src="imgs/reflection.png" style="display: block; margin: 0 auto; width: 250px;">
 
 The added functionality of reflections increased execution time (almost doubling it) due to the increased search space. Optimizations like adjusting the shot depth and checking angles gave slight improvements.
 
