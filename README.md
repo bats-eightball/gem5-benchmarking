@@ -1,10 +1,10 @@
 # gem5-benchmarking
 
-Honestly, not sure if I'm allowed to put my gem5 related stuff here because I'm in the course. Additionally, if you want to build my project, you can refer to the other repositories in this organization. This repo is just meant to be a place to store my benchmarking results and scripts.
+If you want to build my project, you can refer to the other repositories in this organization. This repo is just meant to be a place to store my simulation results and scripts. Additionally, given I'm in the course, I can't share the course related gem5 files. So here, I've only posted work that is completely my own, and not part of the course in any way, in accordance with the course's academic integrity policy. I even made sure to work from a publically available branch of gem5 from the course.
 
-Refer to my actual Rust code here: [https://github.com/bats-eightball/alfred](github.com/bats-eightball/alfred)
+Refer to my actual Rust code here: [github.com/bats-eightball/alfred](https://github.com/bats-eightball/alfred)
 
-Below is a summary of my work. I'm still new to gem5 so it was a very "put pre-made blocks together and script" kind of project. To be fair, anything more may be overkill for the use case. I'm happy that I actually get to work on cool things as part of the course though. 
+Below is a summary of my work. This project is definitely more of an application of gem5 to make software decisions than a use of benchmarking to make architectural decisions. I'm happy that I actually get to work on cool architectural things as part of the course though. 
 
 Anyways, happy reading! - Surya Turaga
 
